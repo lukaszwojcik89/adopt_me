@@ -4,7 +4,7 @@
 - CDN - Content Delivery Network
 - Transpilator - (i.e Babel, TypeScript), transpilation === transformation + compiliation
 
-## TOOLS
+## Tools
 - Prettier [](https://www.npmjs.com/package/prettier)
 - ESLint [](https://www.npmjs.com/package/eslint)
 - Module bundler [](https://www.npmjs.com/package/parcel-bundler)
