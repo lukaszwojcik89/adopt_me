@@ -15,4 +15,9 @@ npm view eslint versions
 # npm view package-name version
 # npm view package-name versions
 
+
+```
+
+```json 
+example of supported browsers [](https://browserslist.dev/)
 ```
