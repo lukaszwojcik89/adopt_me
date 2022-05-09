@@ -1,27 +1,22 @@
-import SearchParams from "./components/SearchParams";
-
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import SearchParams from "./components/SearchParams.jsx";
+import Details from "./components/Details.jsx";
 
 function App() {
-    return (
-        <div>
-            <h1>Adopt Me!</h1>
-            <SearchParams />
-        </div>
-    )
+  return (
+    <div>
+      <BrowserRouter>
+        <Link to="/">
+          <h1>Adopt Me</h1>
+        </Link>
 
-//   return React.createElement("div", {}, 
-//     React.createElement("h1", {}, "Adopt Me!"),
-//     React.createElement(Pet, {
-//       name: "Luna",
-//       animal: "Dog",
-//       breed: "Havanese",
-//     }),
-//     React.createElement(Pet, {
-//       name: "Pepper",
-//       animal: "Bird",
-//       breed: "Cockatiel",
-//     }),
-//   );
-};
+        <Routes>
+          <Route path="/" element={<SearchParams />} />
+          <Route path="/details/:id" element={<Details />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
 
 export default App;
