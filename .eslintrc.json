@@ -1,15 +1,16 @@
 {
-    "extends": ["eslint:recommended",
+    "extends": [
+        "eslint:recommended", 
         "plugin:import/errors",
         "plugin:react/recommended",
         "plugin:jsx-a11y/recommended",
         "prettier"
     ],
-    "rules":{
+    "rules": {
         "react/prop-types": 0,
-        "react/react-in-jsx-scope": 0,
+        "react/react-in-jsx-scope": 0
     },
-    "plugins": ["react", "jsx-a11y", "import"],
+    "plugins": ["react", "import", "jsx-a11y"],
     "parserOptions": {
         "ecmaVersion": 2022,
         "sourceType": "module",
@@ -17,10 +18,10 @@
             "jsx": true
         }
     },
-    "env": {
+    "env":{
+        "es6": true,
         "browser": true,
-        "node": true,
-        "es6": true
+        "node": true
     },
     "settings": {
         "react": {
