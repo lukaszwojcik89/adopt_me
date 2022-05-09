@@ -4,9 +4,8 @@ import { useParams } from "react-router-dom";
 
 class Details extends Component {
     state = {
-            loading: true,
-        };
-    
+        loading: true,
+    };
 
     async componentDidMount() {
         const response = await fetch(
