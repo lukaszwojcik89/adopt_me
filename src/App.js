@@ -2,20 +2,24 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import SearchParams from "./components/SearchParams.jsx";
 import Details from "./components/Details.jsx";
 
+import "./App.css"
+
 function App() {
     return (
-        <div>
+        
             <BrowserRouter>
-                <Link to="/">
+            <header>
+            <Link to="/">
                     <h1>Adopt Me</h1>
                 </Link>
+            </header>
 
                 <Routes>
                     <Route path="/" element={<SearchParams />} />
                     <Route path="/details/:id" element={<Details />} />
                 </Routes>
             </BrowserRouter>
-        </div>
+        
     );
 }
 
