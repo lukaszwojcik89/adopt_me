@@ -1,33 +1,32 @@
-# adopt_me
-
+# Adopt me
 
 ## Dictionary
 - CDN - Content Delivery Network
-- Transpilator - (i.e. Babel, Typescript), transpilation === tranformation and compilation. Conversion between languages version.
-- SPA - single page application
-- PWA - progresive web apps
-- SSR - server side rendering
-- Memoizing - cache function result instead cal it twice with the same parameters, only for pure functions and limited combination of parameters value
+- Transpilator - (i. e. Babel, Typescript) -> Transpilation == transformation and compilation. Conversion between languages versions.
+- SPA - Single Page Application
+- PWA - Progressive Page Application
+- SSA - Server side rendering
+- Memoizing - Cache function result instead call it twice with same parameters, only fore pure function and limited combinations of parameters value
 
 ## Tools
-- Prettier - code formatter [Link](https://www.npmjs.com/package/prettier)
-- Linter (ESLint) - static code analyzer with guidline (Airbnb) [link]()
-- Module Bundler (Webpack, Parcel)
-- Storybook - 
-- State management library (Flux, Redux, Mbbx)
+- Prettier - code formatter => [Link](https://www.npmjs.com/package/prettier) <=
+- Linter (ESLint- static code analyzer with guideline (Airbnb) => [Link](https://eslint.org/)  <=
+- Module Bundler (WebPack, Parcel)
+- StoryBook - 
+- State management library - (Flux, Redux, Mobx)
 
-## Snippets
+## Snippets:
 
+Checking node_package version:
 ```bash
-npm view eslint version
-# npm view <package name> version
-# npm view <package name> version
+npm view eslint versions
+#npm view <package_name> version - newest version
+#npm view <package_name> versions - all versions
 ```
-
-example of supported browsers [link]()
+---
+Example of supported browsers: => [Link](https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25zLCBub3QgZGVhZA%3D%3D) <= 
 ```json
 {
-    "browserslist": ["last 2 version", "not dead"]
+  "browserslist": ["last 2 versions", "not dead"]
 }
-
 ```
