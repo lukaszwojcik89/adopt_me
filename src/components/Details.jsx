@@ -1,12 +1,14 @@
-import React from "react";
-import { Component } from "react";
 import { useParams } from "react-router-dom";
+import { Component } from "react";
 import Carousel from "./Carousel.jsx";
 import ErrorBoundary from "./ErrorBoundary.jsx";
+import ThemeContext from "./ThemeContext.jsx";
+import Modal from "./Modal.jsx";
 
 class Details extends Component {
     state = {
         loading: true,
+        showModal: false,
     };
 
     async componentDidMount() {
@@ -16,15 +18,29 @@ class Details extends Component {
 
         const data = await response.json();
 
-        // this.setState({loading: false, ...data.pets[0]});
+        // this.setState({ loading: false, ...data.pets[0] });
         this.setState(Object.assign({ loading: false }, data.pets[0]));
     }
 
+    toggleModal = () => {
+        this.setState({ showModal: !this.state.showModal });
+    };
+
     render() {
         if (this.state.loading) {
-            return <h2>Loading...</h2>;
+            return <h2>Loading</h2>;
         }
-        const { name, animal, breed, city, description, state, images } = this.state;
+        const {
+            name,
+            animal,
+            breed,
+            city,
+            description,
+            state,
+            images,
+            showModal,
+        } = this.state;
+
         return (
             <div className="details">
                 <div>
@@ -32,22 +48,47 @@ class Details extends Component {
                     <h2>
                         {animal} - {breed} - {city}, {state}
                     </h2>
-                    <button>Adopt me!</button>
+
+                    <ThemeContext.Consumer>
+                        {([theme]) => (
+                            <button
+                                style={{ backgroundColor: theme }}
+                                onClick={this.toggleModal}
+                            >
+                                Adopt {name}!
+                            </button>
+                        )}
+                    </ThemeContext.Consumer>
+
                     <p>{description}</p>
+                    {showModal ? (
+                        <Modal>
+                            <div>
+                                <h2>Would you like to adopt {name}?</h2>
+                            </div>
+                            <div className="buttons">
+                                <a href="https://bit.ly/pet-adopt">
+                                    <button>Yes</button>
+                                </a>
+                                <button onClick={this.toggleModal}>No</button>
+                            </div>
+                        </Modal>
+                    ) : null}
                 </div>
-                <Carousel images = {images}/>
+                <Carousel images={images} />
             </div>
         );
     }
 }
 
 function WrappedDetails() {
-    const parmas = useParams();
+    const params = useParams();
 
     return (
-    <ErrorBoundary>
-        <Details params={parmas} />
-    </ErrorBoundary>)
+        <ErrorBoundary>
+            <Details params={params} />
+        </ErrorBoundary>
+    );
 }
 
 export default WrappedDetails;

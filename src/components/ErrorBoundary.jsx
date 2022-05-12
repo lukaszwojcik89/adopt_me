@@ -9,13 +9,14 @@ class ErrorBoundary extends Component {
 
     static getDerivedStateFromError() {
         return {
-            hasError: false,
+            hasError: true,
         };
     }
 
     componentDidCatch(error, errorInfo) {
         console.error("Error boundary caught an error", error, errorInfo);
     }
+
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.state.hasError) {
             setTimeout(() => {
@@ -30,7 +31,7 @@ class ErrorBoundary extends Component {
         } else if (this.state.hasError) {
             return (
                 <h2>
-                    There was an error! <Link to="/">Click here</Link>
+                    There was an error! <Link to="/">Click here.</Link>
                 </h2>
             );
         }
