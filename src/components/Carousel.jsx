@@ -5,12 +5,6 @@ class Carousel extends Component {
         active: 0,
     };
 
-    // constructor(props) {
-    //     super(props);
-
-    //     this.props = props;
-    // }
-
     static defaultProps = {
         images: ["http://pets-images.dev-apis.com/pets/none.jpg"],
     };
@@ -28,12 +22,12 @@ class Carousel extends Component {
                 <img src={images[active]} alt="animal" />
                 <div className="carousel-smaller">
                     {images.map((image, idx) => (
-                        <img
-                            src={image}
-                            alt="animal thumbnail"
-                            key={image}
-                            className={active === idx ? "aciive" : ""}
-                            onClick={this.handleIndexClick}
+                        <img 
+                            src={image} 
+                            alt="animal thumbnail" 
+                            key={image} 
+                            className={active === idx ? "active" : ""} 
+                            onClick={this.handleIndexClick} 
                             data-index={idx}
                         />
                     ))}
