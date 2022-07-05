@@ -22,11 +22,13 @@
   "homepage": "https://github.com/lukaszwojcik89/adopt_me#readme",
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@testing-library/react": "^13.3.0",
     "eslint": "8.13",
     "eslint-config-prettier": "8.5",
     "eslint-plugin-import": "2.26",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
+    "jest": "^28.1.2",
     "parcel": "^2.5.0",
     "parcel-bundler": "^1.12.5",
     "prettier": "^2.6.2"
