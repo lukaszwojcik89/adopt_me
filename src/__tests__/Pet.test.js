@@ -18,7 +18,7 @@ test("displays a default thumbnail", async () => {
     expect(petThumbnail.src).toContain("none.jpg");
 });
 
-test ("displays a non-default thumbnail", async () => {
+test("displays a non-default thumbnail", async () => {
     const pet = render(
         <StaticRouter>
             <Pet images={["1.jpg", "2.png", "3.webm"]} />
