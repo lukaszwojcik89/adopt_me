@@ -16,5 +16,6 @@ coverage
 .env.development.local
 .env.test.local
 .env.production.local
+.parcel-cache
 
 npm-debug.log
