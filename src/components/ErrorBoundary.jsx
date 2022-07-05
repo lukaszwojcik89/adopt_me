@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Component } from "react";
 import { Link, Navigate } from "react-router-dom";
 

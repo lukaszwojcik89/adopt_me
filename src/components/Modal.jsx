@@ -18,3 +18,4 @@ function Modal({ children }) {
 }
 
 export default Modal;
+// Language: javascript
